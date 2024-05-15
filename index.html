@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish AI</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter&display=swap" rel="stylesheet">
+    <script src="./src/js/main.js"></script>
+    <link rel="stylesheet" href="./src/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="">
+            <div class=" logo">
+                <a href = "index.html" class = "navbar-brand">
+                    <img src = "./img/logo.png" alt = "logo">
+                    <h2 class="text-info">Wish AI</h2>
+                  </a>
+            </div>
+            <!-- <img class="list-icon" src="./src/img/index/list-icon.png" alt=""> -->
+            <div class="header-item ">
+                <div class="header-item-box">
+                    <img src="./src/img/index/close-icon.png" alt="" class="close-icon">
+                    <div class="menu">
+                        <ul>
+                            <li><a href="./about.html">About</a></li>
+                            <li><a href="./index-1.html">Chat</a></li>
+                            <!-- <li><a href="./index-2.html">AI Coding</a></li>
+                            <li><a href="./text2voice.html">AI Text 2 Voice</a></li> -->
+                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="banner">
+                <div class="banner-desc">                   
+                    <h2>
+                        Chào mừng đến với <span class="text-info">Wish AI</span>
+                    </h2>                 
+                    <p style="margin-top: 20px;">
+                        Ứng dụng được xây dựng dựa trên Gemini AI (Bard AI). Giúp người dùng có thể đặt câu hỏi, trả lời, giọng nói đa ngôn ngữ.
+                    </p>
+                    <span class="quantity-food" style="margin-top: 20px; color: white;"> <a href="index-1.html" class="text-white">Dùng thử</a></span>
+                </div>
+                <div class="banner-img">
+                    <img src="./img/homes.jpg" alt="">
+                </div>
+            </div>
+          
+        </main>
+    </div>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/validator.js"></script>
+    <script>
+        handleMenu();
+        renderProducts('.products', ListProduct);
+        renderCategories('.categories-bar', true);
+        let contactValidate = new Validator('#contact');
+        contactValidate.onSubmit = function(type) {
+            alert(`${type} thành công`);
+        }
+    </script>
+</body>
+
+</html>

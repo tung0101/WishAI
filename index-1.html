@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from blackearthauction.com/Gbardnew/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Apr 2024 15:14:45 GMT -->
+
+<head>
+  <title>Wish AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+  <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/adminlte.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/Style.css" rel="stylesheet" type="text/css" />
+  <style>
+    .direct-chat-messages {
+      min-height: 450px;
+      max-height: 450px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    .direct-chat-text {
+      white-space: pre-wrap;
+    }
+
+    .direct-chat-infos a {
+      font-size: 1.2rem;
+    }
+
+    body {
+      overflow-y: hidden;
+      /* Hide vertical scrollbar */
+      overflow-x: hidden;
+      /* Hide horizontal scrollbar */
+    }
+  </style>
+</head>
+
+<body onload="OnLoad()" class="hold-transition dark-mode layout-top-nav">
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="img/AILogo.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
+    <nav class="main-header navbar navbar-expand-md navbar-dark bg-white row" style="padding-left: 150px;">
+      <div class="container col-8">
+        <a href="#" class="navbar-brand">
+          <img src="img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-2" style="opacity: .8">
+          <a class="brand-text font-weight text-dark" href="index.html">Wish AI</a>
+        </a>
+        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a href="about.html" class="nav-link text-dark">About</a>
+            </li>
+            <li class="nav-item ">
+              <a href="index-2.html" class="nav-link text-dark">Chat</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a href="code.html" class="nav-link text-dark">AI Coding</a>
+            </li>
+            <li class="nav-item">
+              <a href="text2voice.html" class="nav-link text-dark">AI Text 2 Voice</a>
+            </li> -->
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="col-4 row">
+        <div class="col-6"> <!-- <label for="exampleInputEmail1">Ngôn ngữ <i data-toggle="tooltip" data-placement="top"
+          title="Language you want your blog" class="fas fa-question-circle"></i><span
+          class="form-required">*</span></label> -->
+          <select id="selLang" class="form-control  bg-white" style="width: 120px;">
+            <option value="Vietnamese" selected>Tiếng Việt</option>
+            <option value="English">English</option>
+            <!-- Các ngôn ngữ khác -->
+          </select>
+        </div>
+        <div class="col-6">
+          <div class="alert alert-danger" id="error" style="display:none">
+          </div>
+          <button type="submit" data-toggle="tooltip" data-placement="bottom" title="" id="export"
+            class="btn btn-lg btn-dark" data-original-title="Tải đoạn chat"><i
+              class="fas fa-file-download"></i></button>
+          <button type="submit" data-toggle="tooltip" data-placement="bottom" title="" id="clear"
+            class="btn btn-lg btn-dark" data-original-title="Xóa đoạn chat"><i class="fas fa-trash-alt"></i></button>
+        </div>
+
+      </div>
+    </nav>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper bg-white">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container">
+          <div class="row mb-2">
+            <!-- <div class="col-sm-6">
+              <h1>Tôi là Trợ lý ảo AI của cửa hàng NgoTanLoi digital technologies. Tên tôi là Synthia </h1>
+            </div> -->
+            <div class="col-sm-6">
+
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+      <section class="">
+
+        <div class="row" style="width: 1000px; margin: 0 auto;">
+          <!-- left column -->
+
+
+          <div class="col-md-12">
+
+            <div class="direct-chat direct-chat-info bg-white">
+              <div class="">
+                <h3 class="text-center" id="name"><i class="fas fa-robot"></i> Wish AI</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="border-top-none">
+                <!-- Conversations are loaded here -->
+                <div id="mssg" class="direct-chat-messages bg-white" style="height: 500px;">
+                  <div class='direct-chat-msg'>
+                    <div class='direct-chat-infos clearfix'><span class='direct-chat-name float-left'>Wish
+                      </span><span class='direct-chat-timestamp float-right'><a href="#"
+                          vall="Xin chào! Tôi là Wish. Tôi có thể giúp gì cho bạn?" class="text-primary play"><i
+                            class="fas fa-play-circle"></i></a> </span></div><img class='direct-chat-img'
+                      src='img/logo.png' alt='Message User Image'>
+                    <div class='direct-chat-text bg-info border-info'>Xin chào! Tôi là Wish. Tôi có thể giúp gì cho bạn?
+                    </div>
+                  </div>
+                </div>
+                <!--/.direct-chat-messages-->
+                <span class="character-typing ">
+                  <div><b class="wait">Wait,</b> <span>Typing ...</span> </div>
+                </span>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer bg-white">
+                <form id="frm">
+                  <input id="hdn_csv" type="hidden" />
+                  <input id="hdn_prompt" type="hidden" />
+                  <input id="hdn_usr" type="hidden" />
+                  <div class="input-group bg-white">
+                    <textarea id="txtMsg" rows="1" name="message" required style="overflow:hidden;resize:none"
+                      placeholder="Nhập câu hỏi ..." class="form-control bg-white"></textarea>
+
+                    <span class="input-group-append">
+                      <button type="button" onclick="createPrompt();return false;" id="Ask"
+                        class="btn btn-dark">Gửi</button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+              <!-- /.card-footer-->
+            </div>
+          </div>
+          <!-- <div class="col-md-4">
+              <div class="card card-warning card-outline  bg-white">
+                <div class="card-header">
+                  <h3 class="card-title"><i class="fas fa-cog"></i> Cài đặt</h3>
+                </div>
+                <div class="card-body bg-white">
+   
+             
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Tone of Reply<span class="form-required">*</span> <i
+                        data-toggle="tooltip" data-placement="right" title="Tone of reply"
+                        class="fas fa-question-circle"></i></label>
+                    <select id="selTone" class="form-control bg-white">
+                      <option value="Professional">Professional</option>
+                      <option value="Humorous">Humorous</option>
+                      <option value="Conversational">Conversational </option>
+                      <option value="Casual">Casual</option>
+                      <option value="Witty">Witty</option>
+                      <option value="Sarcastic">Sarcastic</option>
+                      <option value="Excited">Excited</option>
+                      <option value="Bold">Bold</option>
+                      <option value="Dramatic">Dramatic</option>
+                      <option value="Factual">Factual</option>
+                      <option value="Informative">Informative</option>
+                      <option value="Factual">Factual</option>
+                      <option value="Explanatory">Explanatory</option>
+                      <option value="Masculine">Masculine</option>
+                      <option value="Feminine">Feminine</option>
+                    </select>
+                    <label for="exampleInputEmail1">Giọng nói<span class="form-required">*</span> <i
+                        data-toggle="tooltip" data-placement="right" title="Choose the voice of playback"
+                        class="fas fa-question-circle"></i></label>
+                    <select id="selVoices" class="form-control  bg-white"></select>
+                  </div>
+                </div>
+             
+              </div>
+            </div> -->
+        </div>
+
+      </section>
+
+    </div>
+
+
+
+  </div>
+  <script src="../../cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"
+    integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+  <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+  <script src="js/adminlte.min.js" type="text/javascript"></script>
+  <script src="js/speech.js" type="text/javascript"></script>
+  <script src="js/decrypt.js" type="text/javascript"></script>
+  <script src="js/APIKey.js" type="text/javascript"></script>
+  <!-- Bard AI-->
+  <script src="js/Bard.js" type="text/javascript"></script>
+  <script>
+    function createPrompt() {
+
+      var uMsg = $('#txtMsg').val() + ". Reply in " + $('#selLang').val() + ". Tone of reply should be  " + $('#selTone').val();
+      if (!$('#frm')[0].checkValidity()) {
+        $('#frm')[0].reportValidity();
+      }
+      else {
+        message = $("#txtMsg").val();
+        if ($.trim(message) == '') {
+          return false;
+        }
+        // $('.message-input input').val(null);
+        $('#Ask').html("<i class='fas fa-circle-notch fa-spin'></i>");
+        $('#Ask').prop('disabled', true);
+        $('#mssg').append("<div class='direct-chat-msg right'><div class='direct-chat-infos clearfix'><span class='direct-chat-name float-right'>You</span></div><img class='direct-chat-img' src='img/user.jpg' alt='Message User Image'> <div class='direct-chat-text bg-info'>" + message + "</div></div>");
+        //scroll to question
+        $('#mssg').stop().animate({
+          scrollTop: $('#mssg')[0].scrollHeight
+        }, 800);
+        Send(uMsg);
+        $("#txtMsg").val('');
+      }
+    }
+    $(window).on('keydown', function (e) {
+      if (e.which == 13) {
+        createPrompt();
+        return false;
+      }
+    });
+    //New UI controls
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+    //Text area resize
+    var textarea = document.getElementById("txtMsg");
+    var limit = 200;
+
+    textarea.oninput = function () {
+      textarea.style.height = "";
+      textarea.style.height = Math.min(textarea.scrollHeight, 300) + "px";
+    };
+  </script>
+</body>
+
+<!-- Mirrored from blackearthauction.com/Gbardnew/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Apr 2024 15:14:51 GMT -->
+
+</html>
